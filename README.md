@@ -39,7 +39,6 @@ You can choose _one_ of the following three ways to get started with darkflow.
 >>> from darkflow.net.build import TFNet
 >>>
 
-<<<<<<< HEAD
 `>>>python yolo.py`
 =======
 
