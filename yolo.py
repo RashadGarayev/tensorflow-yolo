@@ -25,13 +25,13 @@ while True:
     if ret:
         results=tfnet.return_predict(frame)
         for color,result in zip(colors,results):
-            tl=(result['topleft']['x'],result['topleft']['y'])
-            br=(result['bottomright']['x'],result['bottomright']['y'])
+            topleft=(result['topleft']['x'],result['topleft']['y'])
+            bottomright=(result['bottomright']['x'],result['bottomright']['y'])
             label=result['label']
             confidence=result['confidence']
             text='{}: {:0f}%'.format(label,confidence*100)
-            frame=cv2.rectangle(frame,tl,br,color,5)
-            frame=cv2.putText(frame,text,tl,cv2.FONT_ITALIC,1,(0,0,0),2)
+            frame=cv2.rectangle(frame,topleft,bottomright,color,5)
+            frame=cv2.putText(frame,text,topleft,cv2.FONT_ITALIC,1,(0,0,0),2)
         cv2.imshow('frame',frame)
         print('FPS {:.1f}'.format(1/(time.time()-stime)))
 		
